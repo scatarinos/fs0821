@@ -1,15 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Grid from './routes/grid';
+import Payments from './routes/payments';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />} >
+            <Route index element={<Grid />} />
+            <Route path="grid" element={<Grid />} />
+            <Route path="payments" element={<Payments />} />
+            <Route path="*" element={<Navigate to="/grid" replace />} />
+          </Route>
+        </Routes>      
+      </BrowserRouter>
   </React.StrictMode>
 );
 
