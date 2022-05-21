@@ -1,0 +1,13 @@
+<div class="clock">
+    <div class="outer-clock-face">
+      <div class="marking marking-one"></div>
+      <div class="marking marking-two"></div>
+      <div class="marking marking-three"></div>
+      <div class="marking marking-four"></div>
+      <div class="inner-clock-face">
+        <div class="hand hour-hand" [style.transform]="rotateHours()"></div>
+        <div class="hand min-hand" [style.transform]="rotateMinutes()"></div>
+        <div class="hand second-hand" [style.transform]="rotateSeconds()" ></div>
+      </div>
+    </div>
+  </div>

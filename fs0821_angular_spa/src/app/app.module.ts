@@ -3,10 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ClockComponent } from './clock/clock.component';
+import { GridComponent } from './grid/grid.component';
+import { PaymentsComponent } from './payments/payments.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GridComponent,
+    ClockComponent,
+    PaymentsComponent
   ],
   imports: [
     BrowserModule,

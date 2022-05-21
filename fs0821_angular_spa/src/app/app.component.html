@@ -1,5 +1,11 @@
+<header class="container mx-auto py-8">
+  <nav class="text-sm uppercase">
+      <ul class="flex flex-row">
+        <li [ngClass]="currentUrl == '/' ? 'font-bold' : ''" ><a routerLink="/" routerLinkActive="active">Grid</a></li>
+        <li class="px-1">|</li>
+        <li [ngClass]="currentUrl == '/payments' ? 'font-bold' : ''" ><a routerLink="/payments" routerLinkActive="active">Payments</a></li>
+      </ul>
+  </nav>    
+</header>
 
-<div class="container mx-auto py-4">
-  <h1>Angular SPA</h1>
-</div>
 <router-outlet></router-outlet>
