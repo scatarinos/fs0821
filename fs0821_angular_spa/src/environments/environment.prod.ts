@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  // TODO: replace this
+  apiURL: 'https://my-server/api'
 };

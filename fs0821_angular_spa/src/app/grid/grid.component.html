@@ -1,0 +1,35 @@
+<div class="container mx-auto">
+  
+    <div class="flex flex-row justify-between align-bottom">
+      <form>
+        <label for="bias" class="block text-xs uppercase font-bold opacity-50">character</label>
+        <input name="bias" maxlength="1" class="form-control border p-2 w-24" [disabled]="!biasEnabled" [ngModel]="bias" (keydown)="onChangeBias($event)" placeholder="Character">
+      </form>
+      
+      <app-clock></app-clock>
+      
+      <button class="border p-0 px-8 text-xs bg-slate-500 text-white font-bold h-10 rounded-md uppercase" (click)="onToggleGenerator()">
+          {{ !(generating$ | async) ? 'generate 2d grid' : 'stop generator'}}
+      </button>
+    
+    </div>
+  
+    <div class="p-2" ></div>
+    <div class="grid grid-cols-10">
+      <div *ngFor="let cell of grid$ | async " class="border text-center p-2 whitespace-pre">
+        {{ cell }}
+      </div>  
+    </div>
+    <div class="p-2" ></div>
+    <div class="flex flex-row justify-center">
+      <div class="w-fit justify-center font-bold text-sm" >
+        <div class="w-2 h-2 inline-block rounded-lg" [ngClass]="(generating$ | async) ? 'bg-green-500' : 'bg-red-200'"></div>
+        <div class="p-2 inline-block">LIVE </div>
+      </div>
+    </div>
+    <div class="p-2" ></div>
+    <div class="flex flex-row justify-center">
+      <div class="border-2 p-4 px-16 w-fit justify-center text-sm" >YOUR CODE: <span class="font-bold">{{ code$ | async }}</span></div>
+    </div>
+    
+  </div>
